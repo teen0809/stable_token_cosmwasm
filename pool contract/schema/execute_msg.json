@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExecuteMsg",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "set_denom_price"
+      ],
+      "properties": {
+        "set_denom_price": {
+          "type": "object",
+          "required": [
+            "denom_price"
+          ],
+          "properties": {
+            "denom_price": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "swap_from_denom_to_token"
+      ],
+      "properties": {
+        "swap_from_denom_to_token": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "swap_from_token_to_denom"
+      ],
+      "properties": {
+        "swap_from_token_to_denom": {
+          "type": "object",
+          "required": [
+            "token_amount"
+          ],
+          "properties": {
+            "token_amount": {
+              "type": "integer",
+              "format": "uint32",
+              "minimum": 0.0
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  ]
+}
